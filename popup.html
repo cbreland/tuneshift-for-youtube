@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Speed Control</title>
+  <style>
+    body { width: 280px; font-family: sans-serif; padding: 10px; }
+    .control { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; }
+    input[type="range"] { width: 100%; }
+    button { width: 100%; padding: 8px; margin-top: 5px; cursor: pointer; }
+    #close-btn { background-color: #ddd; }
+    #filename-preview {
+      background-color: #f0f0f0;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      word-wrap: break-word;
+      min-height: 2.5em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="control">
+    <label for="filename">Filename Preview:</label>
+    <div id="filename-preview">Loading...</div>
+  </div>
+
+  <h3>Playback Speed</h3>
+  <div class="control">
+    <label for="speed">Speed: <span id="speed-value">100</span>%</label>
+    <input type="range" id="speed" min="50" max="150" value="100">
+  </div>
+  <hr>
+  <h3>Export Audio</h3>
+  <div class="control">
+    <button id="start-rec">Start Recording</button>
+    <button id="stop-rec" disabled>Stop & Download</button>
+  </div>
+  
+  <div class="control">
+    <button id="close-btn">Close Panel</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "TuneShift for YouTube",
+  "version": "1.4",
+  "description": "Adjusts playback speed and records audio from YouTube and YouTube Music.",
+  "permissions": [
+    "scripting",
+    "storage",
+    "windows"
+  ],
+  "host_permissions": [
+    "*://music.youtube.com/*",
+    "*://www.youtube.com/*"
+  ],
+  "action": {},
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://music.youtube.com/*",
+        "*://www.youtube.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
